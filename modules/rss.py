@@ -63,26 +63,31 @@ feedlist = {
 	},
 
 	'molecules' : {
-        'url' : 'http://gitweb.sabayon.org/?p=molecules.git;a=rss',
-        'channels' : ['#sabayon-dev'],
-        },
+	'url' : 'http://gitweb.sabayon.org/?p=molecules.git;a=rss',
+	'channels' : ['#sabayon-dev'],
+	},
 
 	'drupal' : {
 	'url' : 'http://gitweb.sabayon.org/?p=www/drupal.git;a=rss',
 	'channels' : ['#sabayon-dev'],
 	},
 
-        'gitweb' : {
-        'url' : 'http://gitweb.sabayon.org/?p=www/gitweb.git;a=rss',
-        'channels' : ['#sabayon-dev'],
-        },
+	'gitweb' : {
+	'url' : 'http://gitweb.sabayon.org/?p=www/gitweb.git;a=rss',
+	'channels' : ['#sabayon-dev'],
+	},
 
-        'static' : {
-        'url' : 'http://gitweb.sabayon.org/?p=www/static.git;a=rss',
-        'channels' : ['#sabayon-dev'],
-        },
+	'static' : {
+	'url' : 'http://gitweb.sabayon.org/?p=www/static.git;a=rss',
+	'channels' : ['#sabayon-dev'],
+	},
+
+	'parker' : {
+	'url' : 'http://gitweb.sabayon.org/?p=parker.git;a=rss'
+	'channels' : ['#sabayon-dev'],
+	},
 }
-			
+		
 name_replacements = {
 	'Fabio Erculiani <lxnay@sabayon.org>': 'Lxn4y',
 	'Mitch Harder <mitch.harder@sabayonlinux.org>': 'DontPanic',
