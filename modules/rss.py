@@ -83,7 +83,7 @@ feedlist = {
 	},
 
 	'parker' : {
-	'url' : 'http://gitweb.sabayon.org/?p=parker.git;a=rss'
+	'url' : 'http://gitweb.sabayon.org/?p=parker.git;a=rss',
 	'channels' : ['#sabayon-dev'],
 	},
 }
