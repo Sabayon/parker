@@ -92,7 +92,8 @@ name_replacements = {
 	'Fabio Erculiani <lxnay@sabayon.org>': 'Lxn4y',
 	'Mitch Harder <mitch.harder@sabayonlinux.org>': 'DontPanic',
 	'Ian Whyman <ian.whyman@sabayon.org>': 'Thev00d00',
-	'Joost Ruis <joost.ruis@sabayonlinux.org>': 'Joost'
+	'Joost Ruis <joost.ruis@sabayonlinux.org>': 'Joost',
+	'Sławomir Nizio <slawomir.nizio@sabayon.org>': 'Enlik'
 	}
 
 def name_switch(name_in):
