@@ -18,7 +18,7 @@ def xscape(string):
 def bug1(phenny, input):
 	"""Print bug desc"""
 	#YAY for Regex 
-	bugid = re.search(r'(B|b)ug #(?P<bugnum>\d*)', input)
+	bugid = re.search(r'(B|b)ug #?(?P<bugnum>\d*)', input)
 	
 	#remove leading zeros
 	a = int(bugid.group('bugnum'))
@@ -49,14 +49,14 @@ def bug1(phenny, input):
 		phenny.say('[Bug %s] Bug not found' % (bug_id))
 		return
 	else:
-		title = re.search(r'(?<=<title>Bug %s &ndash; ).*(?=</title>)' % bug_id, data)
+		title = re.search(r'(?<=<title>Bug %s &ndash; ).*(?=\ \|\ Sabayon Bugzilla</title>)' % bug_id, data)
 		status = re.search(r'(?<=<span id="static_bug_status">).*', data)
 		product = re.search(r'(?<=id="field_container_product" >).*(?=</td>)', data)
 		
-		phenny.say('[Bug %s](%s):%s (%s) %s' % (bug_id, product.group(0),  xscape(title.group(0)), status.group(0), tinyurl.create_one(url)))
+		phenny.say('[Bug %s] %s - %s (%s) %s' % (bug_id, product.group(0),  xscape(title.group(0)), status.group(0), tinyurl.create_one(url)))
 		return
 	
-bug1.rule = r'(B|b)(U|u)(G|g) #([0-9])+\w'
+bug1.rule = r'(B|b)(U|u)(G|g) #?([0-9])'
 bug1.commands = ['bug #<bug number>']
 bug1.example = 'Bug #1234'
 
