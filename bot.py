@@ -209,7 +209,7 @@ class Phenny(irc.Bot):
             for func in funcs: 
                if event != func.event: continue
 
-               match = regexp.match(text)
+               match = regexp.search(text)
                if match: 
                   if self.limit(origin, func): continue
 
