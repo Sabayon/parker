@@ -39,13 +39,13 @@ def bug1(phenny, input):
 		return
 		
 	#check its not an error:
-	checktitle = re.search(r'(?<=<title>).*(?=</title>)', data)
+	checktitle = re.search(r'(?<=<title>).*(?=</title>)', data).group(0)
 	# Not found
-	if checktitle.group(0) == 'Invalid Bug ID':
-		phenny.say('[Bug %s] Bug not found' % (bug_id))
+	if checktitle == 'Invalid Bug ID | Sabayon Bugzilla':
+		phenny.say('[Bug %s] Bug number invalid'  % (bug_id))
 		return
 	#someone is looking for bug 0
-	elif checktitle.group(0) == 'Search by bug number':
+	elif checktitle == 'Search by bug number | Sabayon Bugzilla':
 		phenny.say('[Bug %s] Bug not found' % (bug_id))
 		return
 	else:
