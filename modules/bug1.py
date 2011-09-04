@@ -23,7 +23,7 @@ def bug1(phenny, input):
 	a = int(bugid.group('bugnum'))
 	bug_id = str(a)
 	
-	url ='http://bugs.sabayon.org/show_bug.cgi?id=' + bug_id
+	url ='https://bugs.sabayon.org/' + bug_id
 	
 	try:
 		f = urllib2.urlopen(url)
