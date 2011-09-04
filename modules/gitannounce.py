@@ -14,7 +14,6 @@ import SocketServer
 
 with open(os.path.join(os.path.dirname(__file__), 'gitannounce.config.json')) as f:
 	config = json.load(f)
-print config
 
 def generate_url(repo, commitref):
 	return 'https://git.sabayon.org/%s/commit/?id=%s' % (repo, commitref)
