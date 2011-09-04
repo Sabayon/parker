@@ -8,7 +8,6 @@ About: v00d00.net
 
 import re
 import urllib2
-import tinyurl
 from xml.sax.saxutils import unescape
 
 def xscape(string):
@@ -53,7 +52,7 @@ def bug1(phenny, input):
 		status = re.search(r'(?<=<span id="static_bug_status">).*', data)
 		product = re.search(r'(?<=id="field_container_product" >).*(?=</td>)', data)
 		
-		phenny.say('[Bug %s] %s - %s (%s) %s' % (bug_id, product.group(0),  xscape(title.group(0)), status.group(0), tinyurl.create_one(url)))
+		phenny.say('[Bug %s] %s - %s (%s) %s' % (bug_id, product.group(0),  xscape(title.group(0)), status.group(0), url))
 		return
 	
 bug1.rule = r'(B|b)(U|u)(G|g) #?([0-9])'
