@@ -44,7 +44,7 @@ class Handler(SocketServer.BaseRequestHandler):
 				commit.get('commit'))
 		author = alias_names(commit.get('author'))
 		if len(commit.get('message')) > 80:
-			message = commit.get('message')[:80] + '...'
+			message = commit.get('message')[:99] + u'\u2026'
 		else:
 			message = commit.get('message')
 		output = '[%s] %s: %s %s' % (commit.get('repository'),
