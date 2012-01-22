@@ -1,0 +1,10 @@
+[
+	{"name": "Sabayon.org",
+	"uri": "http://sabayon.org/rss.xml",
+	"announcement-channels": [
+		"#sabayon",
+		"#sabayon-dev",
+		"#sabayon-social",
+		"#test22"
+	]}
+]
