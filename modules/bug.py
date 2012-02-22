@@ -11,10 +11,10 @@ import json
 bugzillas = [('Sabayon', 'https://bugs.sabayon.org'), ('Gentoo', 'https://bugs.gentoo.org')]
 
 def get_bug(bug_id):
-for bz in bugzillas:
-	bug = fetch_bug(bz, bug_id)
-	if bug:
-		return bug
+	for bz in bugzillas:
+		bug = fetch_bug(bz, bug_id)
+		if bug:
+			return bug
 
 def fetch_bug(base, bug_id):
 	uri = '%s/jsonrpc.cgi?method=Bug.get&params=[{%%20%%22ids%%22:%%20[%d]}]' % (base[1], bug_id)
@@ -58,7 +58,7 @@ def bug(phenny, input):
 		return
 	phenny.say(format_bug(bug))
 
-bug.rule = r'bug[\s?#?]+(\d+)'
+bug.rule = r'[Bb][Uu][Gg][\s?#?]+(\d+)'
 bug.commands = ['bug #<bug number>']
 bug.example = 'Bug #1234'
 
