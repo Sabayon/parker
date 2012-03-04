@@ -48,7 +48,7 @@ class Handler(SocketServer.BaseRequestHandler):
 		else:
 			message = commit.get('message')
 		output = '[%s] %s: %s %s' % (commit.get('repository'),
-						author, message, url)
+						author, message, url[:-33])
 
 		if commit.get('repository') in config['channels']:
 			channels = config['channels'].get(commit.get('repository'))
