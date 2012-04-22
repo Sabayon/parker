@@ -40,12 +40,15 @@ def fetch_bug(base, bug_id):
 	return data
 
 def format_bug(bug_data):
+	status = bug_data.get('status')
+	if status == 'RESOLVED':
+		status = bug_data.get('resolution', 'Unknown Resolution')
 	return '[%s Bug %d] %s: %s (%s) %s/%d' % (
 		bug_data.get('bz_name', ''),
 		bug_data.get('id', 'Unknown Id'),
 		bug_data.get('product', 'Unknown Product'),
 		bug_data.get('summary', 'Unknown Summary'),
-		bug_data.get('resolution', 'Unknown Resolution'),
+		status,
 		bug_data.get('bz_uri', 'Host Unknown'),
 		bug_data.get('id', 'Unknown Id'))
 
