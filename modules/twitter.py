@@ -16,8 +16,6 @@ r_p = re.compile(r'(?ims)(<p class="js-tweet-text.*?</p>)')
 r_tag = re.compile(r'(?ims)<[^>]+>')
 r_anchor = re.compile(r'(?ims)(<a.*?</a>)')
 r_expanded = re.compile(r'(?ims)data-expanded-url=["\'](.*?)["\']')
-r_whiteline = re.compile(r'(?ims)[ \t]+[\r\n]+')
-r_breaks = re.compile(r'(?ims)[\r\n]+')
 
 def entity(*args, **kargs):
    return web.entity(*args, **kargs).encode('utf-8')
@@ -43,8 +41,8 @@ def read_tweet(url):
       text = expand(text)
       text = r_tag.sub('', text)
       text = text.strip()
-      text = r_whiteline.sub(' ', text)
-      text = r_breaks.sub(' ', text)
+      text = text.replace('\r', '')
+      text = text.replace('\n', '')
       return decode(text)
    return "Sorry, couldn't get a tweet from %s" % url
 
@@ -68,11 +66,7 @@ def id_tweet(tid):
    return "Sorry, couldn't get a tweet from %s" % link
 
 def twitter(phenny, input):
-   arg = input.group(2)
-   if not arg:
-      return phenny.reply("Give me a link, a username, or a tweet id")
-
-   arg = arg.strip()
+   arg = input.group(2).strip()
    if isinstance(arg, unicode):
       arg = arg.encode('utf-8')
 
